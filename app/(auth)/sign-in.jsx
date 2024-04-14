@@ -31,9 +31,9 @@ const SignIn = () => {
     try{
       signIn(form.email, form.password);
       const result = await getCurrentUser();
+      
       setUser(result);
       setIsLoggedIn(true);
-      //set it to gloabl state
 
       Alert.alert("Success", "User signed in successfully!");
       router.replace("/home")
