@@ -7,10 +7,13 @@ import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 
 import {getCurrentUser, signIn} from '../../lib/appwrite';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
-import { setUser, setIsLoggedIn } from '../../context/GlobalProvider'
 
 const SignIn = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
+
+
   const [form, setForm] = useState({
     email:'',
     password:''
